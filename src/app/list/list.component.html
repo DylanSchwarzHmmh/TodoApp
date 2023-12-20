@@ -1,0 +1,31 @@
+<h1>Todos</h1>
+
+<table class="table">
+  <thead>
+  <th></th>
+  <th>Bezeichnung</th>
+  <th>Kategorie</th>
+  <th></th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let t of todos " [class.done]="t.done">
+    <td style="width:50px;" >
+      <i class="material-icons" *ngIf="t.done">
+        done
+      </i>
+    </td>
+    <td >{{t.term}} </td>
+    <td >{{t.category?.name}}</td>
+    <td>
+      <app-priority-chooser [todo]="t"></app-priority-chooser>
+    </td>
+    <td>
+      <button (click)="delete(t)">
+        <i class="material-icons">
+          delete
+        </i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
