@@ -1,37 +1,42 @@
-<h3>Neues Todo anlegen</h3>
+
 
 
 <form #form>
+  <div class="form-header">
+    <h3>Neues Todo anlegen</h3>
+    <app-priority-chooser [todo]="todo" (choosed)="priorityChoosed($event)"></app-priority-chooser>
+  </div>
 
-  <div class="form-group row">
-    <label for="text1" class="col-4 col-form-label">Bezeichnung</label>
+  <div class="form-group row small">
+    <label for="text1" class="col-4 ">Bezeichnung</label>
     <div class="col-8">
-      <input [(ngModel)]="todo.term" required minlength="5"  id="text1" name="text1"
+      <input [(ngModel)]="todo.term" id="text1" name="text1"
              placeholder="Was möchten Sie tun?"
              type="text"
              class="form-control">
     </div>
   </div>
-  <div class="form-group row">
-    <label for="select" class="col-4 col-form-label">Kategorie</label>
+  <div class="form-group row small">
+    <label for="text1" class="col-4 ">Fällig bis</label>
     <div class="col-8">
-      <select required id="select" [(ngModel)]="todo.category" name="select" class="custom-select">
+      <input [(ngModel)]="todo.term" id="date" name="date"
+             type="date"
+             class="form-control">
+    </div>
+  </div>
+  <div class="form-group row small">
+    <label for="select" class="col-4 ">Kategorie</label>
+    <div class="col-8">
+      <select id="select" [(ngModel)]="todo.category" name="select" class="catSelect">
         <option *ngFor="let cat of categories " [ngValue]="cat">
           {{cat.name}}
         </option>
       </select>
     </div>
   </div>
-
   <div class="form-group row">
-    <label for="select" class="col-4 col-form-label"></label>
-    <div class="col-8">
-      <app-priority-chooser [todo]="todo" (choosed)="priorityChoosed($event)"></app-priority-chooser>
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="offset-4 col-8">
-      <button (click)="save()" name="submit" type="submit" class="btn btn-primary">Submit
+    <div class="offset-5 col-8">
+      <button (click)="save()" name="submit" type="submit" class="btn btn-primary">Speichern
       </button>
     </div>
   </div>

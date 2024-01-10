@@ -1,12 +1,15 @@
-<i class="material-symbols-outlined" (click)="select(priority.critical)"
-   [class.selected]="todo?.priority === priority.critical">
-error
-</i>
-<i class="material-symbols-outlined" (click)="select(priority.normal)"
-   [class.selected]="todo?.priority === priority.normal">
+
+<span class="material-symbols-outlined arrow" (click)="select(priority.minor)"
+      [class.selected]="todo?.priority === priority.minor">
+  arrow_upward_alt
+</span>
+<span class="material-symbols-outlined star" (click)="select(priority.normal)"
+      [class.selected]="todo?.priority === priority.normal">
   grade
-</i>
-<i class="material-symbols-outlined" (click)="select(priority.minor)"
-   [class.selected]="todo?.priority === priority.minor">
-  trending_flat
-</i>
+</span>
+<span class="material-symbols-outlined error" (click)="select(priority.critical)"
+   [class.selected]="todo?.priority === priority.critical">
+  error
+</span>
+
+

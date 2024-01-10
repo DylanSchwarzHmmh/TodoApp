@@ -1,0 +1,23 @@
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  transition: width 0.3s ease;
+}
+.categories {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.category {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}
+

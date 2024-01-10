@@ -1,31 +1,60 @@
-<h1>Todos</h1>
+<div class="wrapper">
+<div class="leftSide">
+  <app-sidebar></app-sidebar>
+</div>
+<div class="rightSide">
+<div class="table-headline">
+  <h1>Todo-List</h1>
+  <div class="input-group mb-3 searchBar">
+    <div class="input-group-prepend">
+      <button class="btn btn-outline-secondary material-symbols-outlined" type="button" (click)="search()" >search</button>
+    </div>
+    <input type="text" class="form-control" placeholder="Wonach suchen Sie?"  [(ngModel)]="searchTerm" (input)="search()">
+  </div>
 
+</div>
 <table class="table">
   <thead>
   <th></th>
+  <th>ID</th>
   <th>Bezeichnung</th>
+  <th>Fällig bis</th>
   <th>Kategorie</th>
   <th></th>
   </thead>
   <tbody>
   <tr *ngFor="let t of todos " [class.done]="t.done">
-    <td style="width:50px;" >
-      <i class="material-icons" *ngIf="t.done">
-        done
-      </i>
+    <td>
+      @if(t.priority == 0){
+      <span class="material-symbols-outlined error">
+        error
+      </span>
+      }
+      @if(t.priority == 1){
+      <span class="material-symbols-outlined star">
+        grade
+      </span>
+      }
+      @if(t.priority == 2){
+      <span class="material-symbols-outlined arrow">
+        arrow_upward_alt
+      </span>
+      }
     </td>
+    <td >{{t.id}}</td>
     <td >{{t.term}} </td>
+    <td></td>
     <td >{{t.category?.name}}</td>
+
     <td>
-      <app-priority-chooser [todo]="t"></app-priority-chooser>
-    </td>
-    <td>
-      <button (click)="delete(t)">
-        <i class="material-icons">
+      <button (click)="delete(t)" class="deleteButton">
+        <span class="material-symbols-outlined whiteButton">
           delete
-        </i>
+        </span>
       </button>
     </td>
   </tr>
   </tbody>
 </table>
+</div>
+</div>

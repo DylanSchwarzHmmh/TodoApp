@@ -1,3 +1,54 @@
 .done {
   color: lightgray;
 }
+.deleteButton{
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 0.5em;;
+}
+.whiteButton{
+  color: white;
+
+}
+thead{
+  border-bottom: 1px solid black;
+}
+.table{
+
+}
+.searchBar{
+  width: 30%;
+  margin-right: 2rem;
+}
+.table-headline{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rightSide{
+  margin-left: 4rem;
+  width: 100%;
+}
+.error{
+  font-size: 2em;
+  margin-left: 0.4rem;
+}
+.star{
+  font-size: 2.5em;
+}
+.arrow{
+  font-size: 2.5em;
+  font-weight: bold;
+}
+.wrapper{
+
+  display: flex;
+  flex-direction: row;
+}
+.rightSide{
+  margin-top: 4rem;
+}

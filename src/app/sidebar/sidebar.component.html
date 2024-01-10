@@ -1,1 +1,23 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+
+
+  <div class="categories">
+    <div class="category">
+      alle
+    </div>
+    @for(category of this.todoService.categories; track category.id){
+
+    <div class="category">
+      {{ category.name }}
+    </div>
+    }
+  </div>
+  <div class="collapse-input">
+    <button type="button" id="collapsedButton" (click)="sidebarClosed()"  >
+      <span class="material-symbols-outlined">
+        arrow_back_ios
+      </span>
+    </button>
+
+  </div>
+</div>
